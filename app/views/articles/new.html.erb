@@ -1,5 +1,16 @@
 <h1>Create a new Article</h1>
 
+<% if flash[:errors] %>
+  <div>
+    <p><strong>Errors</strong></p>
+    <ul>
+        <% flash[:errors].each do |msg| %>
+            <li><%= msg %></li>
+        <% end %>
+    </ul>
+  </div>
+<% end %>
+
 <%= form_with scope: :article, url: articles_path, local: true do |f| %>
     <p>
         <%= f.label :title %><br/>
