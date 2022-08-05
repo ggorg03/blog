@@ -1,5 +1,61 @@
 @import 'bootstrap/dist/css/bootstrap';
 
 .navbar {
-  background-color: #FDF6EA !important;
+  background-color: black !important;
+}
+
+.nav-link {
+  color: white !important;
+}
+
+#logo {
+  color: white !important;
+  font-size: 2em;
+  font-weight: bold;
+  text-transform: uppercase;
+}
+
+.jumbotron {
+  background-image: asset-url('write-machine.jpg');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 425px;
+}
+
+@media (min-width: 768px) and (max-width: 1023px) {
+  .container {
+    max-width: 100%;
+    padding: 0;
+  }
+}
+
+@media (min-width: 1024px) {
+  .container {
+    max-width: 1000px;
+  }
+}
+
+@media (min-width: 1600px) {
+  .container {
+    max-width: 1440px;
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+
+#page-content {
+  flex: 1 0 auto;
+  background-color: lightgrey;
+  padding-top: 20px;
+  height: 100%;
+}
+
+#sticky-footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
 } 
