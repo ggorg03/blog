@@ -1,17 +1,22 @@
-<%= form_with model: @article, local: true do |f| %>
-    <p>
-        <%= f.label :title %><br/>
-        <%= f.text_field :title %>
-    </p>
-    <p>
-        <%= f.label :description %><br/>
-        <%= f.text_area :description %>
-    </p>
-    <p>
-        <%= f.submit %>
-    </p>
-<% end %>
-
-<p>
-    <%= link_to "Cancel and return to list of articles", articles_path %>
-</p>
+<div class="row justify-content-center">
+    <div class="col-10">
+        <%= form_with model: @article, class: "shadow p-5 mb-5 bg-dark rounded", local: true do |f| %>
+            <div class="form-group row">
+                <%= f.label :title, class: "col-sm-2 col-form-label font-weight-bold text-light" %>
+                <div class="col-sm-10">
+                    <%= f.text_field :title, class: "form-control", placeholder:"Title of the article" %>
+                </div>
+            </div>
+            <div class="form-group row">
+                <%= f.label :description, class: "col-sm-2 col-form-label font-weight-bold text-light" %>
+                <div class="col-sm-10">
+                    <%= f.text_area :description, rows: 10, class: "form-control", placeholder:"Description of the article" %>
+                </div>
+            </div>
+            <div class="form-group row justify-content-begin">
+                <%= f.submit class:"btn btn-success btn-lg" %>
+                <%= link_to "Cancel", articles_path, class:"btn btn-danger btn-lg" %>
+            </div>
+        <% end %>
+    </div>
+</div>
