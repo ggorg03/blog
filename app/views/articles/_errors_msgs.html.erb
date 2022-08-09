@@ -1,10 +1,12 @@
 <% if flash[:errors] %>
-  <div>
-    <p><strong>Errors</strong></p>
-    <ul>
-        <% flash[:errors].each do |msg| %>
-            <li><%= msg %></li>
-        <% end %>
-    </ul>
+  <div class="alert alert-danger alert-dismissible fade show" role="alert">
+    <h4 class="alert-heading">Some errors occurred during form submission!</h4>
+    <% flash[:errors].each_with_index do |msg, index| %>
+      <%= '<hr>'.html_safe unless index == 0 %>
+      <p><%= msg %></p>
+    <% end %>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
   </div>
 <% end %>
