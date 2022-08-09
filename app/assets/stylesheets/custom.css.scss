@@ -24,11 +24,9 @@
   margin: 0;
 }
 
-@media (min-width: 768px) and (max-width: 1023px) {
-  .container {
-    max-width: 100%;
-    padding: 0;
-  }
+.container {
+  max-width: 100%;
+  padding: 0;
 }
 
 @media (min-width: 1024px) {
@@ -53,6 +51,7 @@ body {
   padding-bottom: 25px;
   flex: 1 0 auto;
   background-color: lightgrey;
+  min-height: calc(100% - 72px - 74px);
 }
 
 #sticky-footer {
