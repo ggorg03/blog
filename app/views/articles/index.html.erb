@@ -1,7 +1,4 @@
-<h1 class="d-flex justify-content-center">Listing all articles</h1>
-<p>
-  <%= link_to "+ Create new article", new_article_path, class: "btn btn-success" %>
-</p>
+<h1 class="d-flex justify-content-center page-title">Listing all articles</h1>
 
 <div class="row justify-content-center">
   <div class="col-sm-8">
@@ -15,7 +12,10 @@
           <p class="card-text"><%= article.description.truncate(50) %></p>
           <%= link_to "View", article_path(article), class: "btn btn-outline-success" %>
           <%= link_to "Edit", edit_article_path(article), class: "btn btn-outline-info" %>
-          <%= link_to "Delete", article_path(article), class: "btn btn-outline-danger", method: :delete %>
+          <%= link_to "Delete", article_path(article), class: "btn btn-outline-danger",
+                      :method => :delete,
+                      :data => { confirm: 'Are you sure?' }
+          %>
         </div>
         <div class="card-footer text-muted">
           <%= created_edited_time_ago_in_words(article) %>
