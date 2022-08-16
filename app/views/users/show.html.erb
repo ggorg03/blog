@@ -5,4 +5,9 @@
 <div class="text-center mb-4">
     <%= link_to "Update your profile", edit_user_path(@user), class: "btn btn-info" %>
 </div>
+
 <%= render 'articles/articles_list' %>
+
+<div class="apple_pagination">
+    <%= will_paginate @articles, :container => false %>
+</div>
