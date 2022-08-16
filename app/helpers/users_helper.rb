@@ -8,7 +8,7 @@ module UsersHelper
         hash = Digest::MD5.hexdigest(email_address)
         image_src = "https://www.gravatar.com/avatar/#{hash}?s=#{options[:size]}"
 
-        image_tag image_src, alt: user.username , class: "rounded-circle mb-5 shadow mx-auto d-block"
+        image_tag image_src, alt: user.username , class: "rounded-circle mb-4 shadow mx-auto d-block"
     end
 
     def joined_time_ago_in_words(user)
