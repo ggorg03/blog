@@ -1,9 +1,8 @@
 class SessionsController < ApplicationController
-  def login
+  def new
   end
 
   def create
-    byebug
   end
 
   def destroy
