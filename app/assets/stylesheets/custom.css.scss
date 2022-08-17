@@ -2,6 +2,20 @@
 
 .navbar {
   background-color: black !important;
+  
+  .dropdown-menu {
+    background-color: #343a40 !important;
+  }
+
+  .dropdown-item {
+    color: whitesmoke !important;
+    transition: all 0.2s;
+
+    &:hover {
+      background-color: #343a40;
+      filter: brightness(1.75);
+    }
+  }
 }
 
 .nav-link {
