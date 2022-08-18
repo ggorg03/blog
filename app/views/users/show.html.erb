@@ -1,6 +1,7 @@
 <h3 class="d-flex justify-content-center"><%= @user.username %></h3>
 
 <%= gravatar_image @user, size: 200 %>
+
 <% if logged_in? && @user == current_user %>
     <div class="text-center mb-4">
         <%= link_to "Update your profile", edit_user_path(@user), class: "btn btn-info" %>

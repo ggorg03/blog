@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
-    before_action :set_user, only: [:show, :edit, :update]
-    before_action :require_user, only: [:edit, :update]
-    before_action :require_same_user, only: [:edit, :update]
+    before_action :set_user, only: [:show, :edit, :update, :destroy]
+    before_action :require_user, only: [:edit, :update, :destroy]
+    before_action :require_same_user, only: [:edit, :update, :destroy]
 
     def show
         @articles = @user.articles.paginate(page: params[:page], per_page: 5).order('updated_at DESC')
@@ -37,6 +37,18 @@ class UsersController < ApplicationController
             flash[:errors] = @user.errors.full_messages
             redirect_to signup_path
        end
+    end
+
+    def destroy
+        if @user.authenticate(params[:confirmation][:password])
+            @user.destroy
+            session[:user_id] = nil
+            flash[:notice] = "Profile and all associated articles were successfully deleted!"
+            redirect_to root_path
+        else
+            flash[:alert] = "Profile was not deleted!"
+            redirect_to @user
+        end
     end
 
     private

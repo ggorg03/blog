@@ -29,7 +29,12 @@
                         <%= link_to current_user.username, current_user , class:"dropdown-item" %>
                         <%= link_to "Update your profile", edit_user_path(current_user), class:"dropdown-item" %>
                         <div class="dropdown-divider"></div>
-                        <%= link_to "Logout", logout_path, class: "dropdown-item", method: :delete %>
+                        <%= link_to "Logout", logout_path, class: "dropdown-item text-warning", method: :delete %>
+                        <div class="dropdown-divider"></div>
+                        <%= link_to "Delete Profile", '#',
+                                        class: "dropdown-item text-danger",
+                                        :data => { toggle: "modal", target: "#exampleModalCenter" } 
+                        %>
                     </div>
                 </li>
             <% else %>
