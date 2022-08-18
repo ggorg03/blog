@@ -20,11 +20,8 @@
                     <% end %>
                 </div>
                 <div class="modal-footer">
+                    <%= button_tag "Delete", class: "btn btn-outline-dark mr-3", form: "form_delete-user" %>
                     <%= button_tag "Cancel" ,class:"btn btn-outline-dark", :data => {dismiss: "modal"} %>
-                    <%= button_tag "Delete", class: "btn btn-outline-dark mr-3",
-                                            form: "form_delete-user",
-                                            :data => { confirm: 'Are you sure?' }
-                    %>
                 </div>
             </div>
         </div>
