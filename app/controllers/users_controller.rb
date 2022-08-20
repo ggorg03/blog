@@ -72,7 +72,6 @@ class UsersController < ApplicationController
     end
 
     def require_same_user_or_admin
-        byebug
         if @user != current_user && !current_user.admin?
             flash[:alert] = 'You just can delete your Profile'
             redirect_to @user
