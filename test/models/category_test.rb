@@ -1,7 +1,8 @@
 require 'test_helper'
 
 class CategoryTest < ActiveSupport::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  test "Category can be created" do
+    @category = Category.new(name: "Sports")
+    assert @category.save
+  end
 end
