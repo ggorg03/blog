@@ -1,0 +1,7 @@
+<h1 class="d-flex justify-content-center page-title">Categories</h1>
+
+<%= render "categories_list" %>
+
+<div class="apple_pagination">
+    <%= will_paginate @categories, :container => false %>
+</div>
