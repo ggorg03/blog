@@ -14,10 +14,10 @@ class CategoriesController < ApplicationController
         @category = Category.new(category_params)
 
         if @category.save
-            flash['notice'] = 'Category was created successfully!'
+            flash[:notice] = 'Category was created successfully!'
             redirect_to @category
         else
-            flash['alert'] = @category.errors.full_messages
+            flash[:errors] = @category.errors.full_messages
             redirect_to new_category_path
         end
     end
