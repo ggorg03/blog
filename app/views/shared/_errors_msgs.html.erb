@@ -1,6 +1,6 @@
 <% if flash[:errors] %>
   <div class="alert alert-danger alert-dismissible fade show mb-4" role="alert">
-    <h4 class="alert-heading">Some errors occurred during form submission!</h4>
+    <h4 class="alert-heading text-left">Some errors occurred during form submission!</h4>
     <% flash[:errors].each_with_index do |msg, index| %>
       <%= '<hr>'.html_safe unless index == 0 %>
       <p><%= msg %></p>
